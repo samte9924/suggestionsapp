@@ -3,10 +3,11 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import { useEffect, useRef, useState } from "react";
-import { FiEye } from "react-icons/fi";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 import { IoMailOutline } from "react-icons/io5";
 import { MdChecklist } from "react-icons/md";
-import { RiAdminLine, RiUserLine } from "react-icons/ri";
+import { RiAdminLine, RiUser3Fill, RiUserLine } from "react-icons/ri";
+import { IoMdClose } from "react-icons/io";
 
 interface Props {
   icon?: React.ReactNode;
@@ -17,12 +18,10 @@ interface Props {
 }
 
 let useClickOutside = (handler: Function) => {
-  let domNode = useRef<HTMLButtonElement>(null);
+  let domNode = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    if (!domNode.current) return;
     let maybeHandler = (event: MouseEvent) => {
-      if (!domNode.current) return;
-      if (!domNode.current.contains(event.target as Node)) {
+      if (domNode.current && !domNode.current.contains(event.target as Node)) {
         handler(event);
       }
     };
@@ -48,7 +47,9 @@ function NavItem(props: Props) {
 
   return (
     <div className="nav-item" onClick={() => setOpen(!open)}>
-      <button className="icon-button">{props.icon}</button>
+      <button className="icon-button">
+        {open ? <IoMdClose /> : props.icon}
+      </button>
       {open && props.children}
     </div>
   );
@@ -58,13 +59,17 @@ function DropdownMenu(props: Props) {
   const [open, setOpen] = useState(false);
   let domNode = useClickOutside(() => setOpen(false));
   return (
-    <div onClick={() => setOpen(!open)} className="dropdown-selector">
-      <button className="selector-button" ref={domNode}>
-        {props.icon}
+    <div
+      onClick={() => setOpen(!open)}
+      className="dropdown-selector"
+      ref={domNode}
+    >
+      <button className="selector-button">
+        {open ? <FiEyeOff /> : props.icon}
       </button>
       {open ? (
         <div className="dropdown">
-          <DropdownItem href="/user/account" leftIcon={<RiUserLine />}>
+          <DropdownItem href="/user/account" leftIcon={<RiUser3Fill />}>
             Account
           </DropdownItem>
           <hr className="menu-divider" />

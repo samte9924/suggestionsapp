@@ -12,8 +12,8 @@ body {
   padding: 0;
   box-sizing: border-box;
   width: 100%;
+  height: auto;
   overflow-y: auto;
-  overflow-x: hidden;
   background-color: rgb(24, 24, 27);
   color: hsla(0, 0%, 100%, 0.9);
 }
@@ -55,7 +55,7 @@ ul {
 }
 
 .dropdown {
-  @apply absolute top-[48px] w-[300px] translate-x-[-65%] bg-zinc-700 border border-zinc-500 rounded-xl p-1 overflow-hidden shadow-lg;
+  @apply absolute top-[100px] w-[300px] translate-x-[-43%] bg-zinc-700 border border-zinc-500 rounded-xl p-1 overflow-hidden shadow-lg;
 }
 
 .dropdown-selector {
