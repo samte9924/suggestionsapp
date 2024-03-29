@@ -1,6 +1,6 @@
 import Link from "next/link";
 import CardsContainer from "./CardsContainer";
-import { Suggestion } from "@/lib/actions";
+import { SuggestionObj } from "@/lib/types";
 import {
   MdArrowBackIos,
   MdArrowBackIosNew,
@@ -17,7 +17,7 @@ export default function Pagination({
 }: {
   page: number;
   perPage: number;
-  data: { items: Suggestion[]; itemsCount: number };
+  data: { items: SuggestionObj[]; itemsCount: number };
 }) {
   const totalPages = data ? Math.ceil(data.itemsCount / perPage) : 0;
 

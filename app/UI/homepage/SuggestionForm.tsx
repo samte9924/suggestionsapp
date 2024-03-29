@@ -29,7 +29,7 @@ export default function SuggestionForm() {
         id="senderName"
         placeholder="Nome (opzionale)"
         spellCheck="false"
-        className="w-full p-4 rounded-lg shadow-lg bg-zinc-800/80 border border-zinc-600 hover:outline-zinc-400 hover:outline-offset-2 focus:outline-offset-0 focus:outline-zinc-400 focus:scale-[1.01] outline-none transition-all ease-out"
+        className="w-full p-4 rounded-lg shadow-lg bg-zinc-800/80 border border-zinc-600 hover:outline-zinc-400 hover:outline-offset-2 focus:outline-offset-0 focus:outline-zinc-400 outline-none transition-all ease-out"
       />
       <textarea
         cols={50}
@@ -38,7 +38,7 @@ export default function SuggestionForm() {
         id="suggestion"
         placeholder=". . ."
         spellCheck="false"
-        className="w-full p-4 bg-zinc-800/80 rounded-lg shadow-lg max-h-[350px] min-h-[100px] border border-zinc-600 hover:outline-zinc-400 hover:outline-offset-2 focus:outline-offset-0 focus:outline-zinc-400 focus:scale-[1.01] outline-none transition-all ease-out"
+        className="w-full p-4 bg-zinc-800/80 rounded-lg shadow-lg max-h-[350px] min-h-[100px] border border-zinc-600 hover:outline-zinc-400 hover:outline-offset-2 focus:outline-offset-0 focus:outline-zinc-400 outline-none transition-all ease-out"
       />
       <button
         type="submit"

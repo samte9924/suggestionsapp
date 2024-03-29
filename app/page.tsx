@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 export default function Page() {
   return (
     <main>
-      <h1 className="text-5xl font-bold my-12 text-center md:text-left md:px-4">
+      <h1 className="text-5xl font-bold my-12 text-center md:text-left md:px-4 select-none">
         Homepage
       </h1>
       <SuggestionForm />

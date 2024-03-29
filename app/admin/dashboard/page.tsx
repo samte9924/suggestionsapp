@@ -18,7 +18,7 @@ export default async function Page({
 
   return (
     <div className="w-full">
-      <h1 className="text-5xl font-bold my-12 text-center md:text-left md:px-4">
+      <h1 className="text-5xl font-bold my-12 text-center md:text-left md:px-4 select-none">
         Admin Dashboard
       </h1>
       <Pagination
